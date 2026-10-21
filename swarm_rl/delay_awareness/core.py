@@ -185,8 +185,9 @@ own acceleration response. Cost trades nominal tracking against short predicted
 separation. Hyperparameters are fixed before the diagnostic and not fitted.
 """
     relative, relative_vel = peer_fields(obs)
-    offsets = np.array([[x, y, 0.0] for x in (-1.0, -0.5, 0, 0.5, 1.0)
-                        for y in (-1.0, -0.5, 0, 0.5, 1.0)], dtype=float)
+    offsets = np.array([[x, y, z] for x in (-1.0, -0.5, 0, 0.5, 1.0)
+                        for y in (-1.0, -0.5, 0, 0.5, 1.0)
+                        for z in (-0.5, 0.0, 0.5)], dtype=float)
     horizons = np.linspace(0.2, 1.2, 6)
     response_time = 0.25
     actions = []
