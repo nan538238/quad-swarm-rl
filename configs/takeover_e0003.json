@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E0003",
+  "angles_degrees": [0, 45, 90, 135, 180, 225, 270, 315],
+  "training_scenario_seeds": [200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231],
+  "validation_scenario_seeds": [10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007],
+  "detour_distance_range": [1.0, 2.6],
+  "checkpoint_elapsed_seconds": [1.0, 3.0],
+  "action_noise_std": 0.15,
+  "reactive_range_m": 0.9,
+  "reactive_gain": 1.5,
+  "torch_seed": 0,
+  "hidden_sizes": [64, 64],
+  "learning_rate": 0.001,
+  "epochs": 150,
+  "batch_size": 128,
+  "ridge_l2": 0.001,
+  "device": "cuda"
+}

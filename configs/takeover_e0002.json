@@ -1,0 +1,9 @@
+{
+  "experiment_id": "E0002",
+  "angles_degrees": [0, 45, 90, 135, 180, 225, 270, 315],
+  "scenario_seeds": [100, 101, 102, 103, 104],
+  "modes": ["nominal", "wait", "reactive_all", "reactive_after"],
+  "detour_distance_range": [1.0, 2.6],
+  "reactive_range_m": 0.9,
+  "reactive_gain": 1.5
+}

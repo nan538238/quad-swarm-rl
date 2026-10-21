@@ -14,3 +14,6 @@ _results
 *.egg-info/
 train_dir/
 wandb/
+takeover_runs/
+._*
+.pytest_cache/
