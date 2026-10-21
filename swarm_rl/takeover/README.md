@@ -84,3 +84,34 @@ Use the server venv and driver-library environment above. E0003 requests CUDA
 and fails explicitly if it is unavailable. Both commands need a fresh output
 directory. No MARL control policy has been trained by these diagnostic commands;
 prediction accuracy alone cannot establish improved team behavior.
+
+## CP-C2-01 bounded policy screen
+
+`policy_train` implements the E0004 shared decentralized 41-input actor and
+separate centralized team critic. All 32768 live control transitions count;
+only autonomous teammate rows during takeover contribute actor gradients.
+The complete transition stream trains the critic, including nominal patrol
+and handback. Actual episode termination and the 24-second limit stop GAE;
+rollout boundaries bootstrap. Gaussian latents are retained for stable tanh
+log-probabilities. Fixed feature scales do not depend on validation data.
+
+The fixed final checkpoint is reloaded for 80 deterministic validation cases.
+No checkpoint is selected by validation. Frozen E0003 predictor identity is
+asserted before and after dense training. Raw training transitions, updates,
+episodes, validation trajectories and cases, incomplete final episode, source
+copies, hashes and live/label costs are retained in each fresh output folder.
+The orchestrator's manifest wrapper must authorize and record scientific runs.
+
+```bash
+python -m unittest discover -s tests -p 'test_*.py' -v
+python -m swarm_rl.takeover.policy_train --config configs/takeover_e0004.json --variant none --output takeover_runs/NEW-none
+```
+
+E0004 variants are `none`, `analytic`, `dense`, and `rules`. `rules` evaluates
+nominal, bounded wait during takeover, reactive during takeover, and separately
+reactive all phases. The `sparse` implementation requires a separately activated
+E0005 configuration and reuses E0004 baseline artifacts. All outputs are
+preliminary, with one training seed and no final-test scenarios. Recovery cost
+is 10 seconds for any collision or absent recovery; inspection failure is
+reported separately. Compare integrated patrol lag only on paired common-success
+cases, because crashes shorten the observed duration.
