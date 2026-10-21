@@ -267,6 +267,12 @@ class TakeoverPatrolEnv:
         return np.clip((desired - self.nominal_commands()) / self.config.residual_velocity,
                        -1, 1).astype(np.float32)
 
+    def operator_command(self):
+        """Overridable external velocity interface; default arithmetic unchanged."""
+        i = self.takeover_agent
+        return _limit_rows((self._operator_target - self.positions[i])[None, :],
+                           self.config.operator_speed)[0]
+
     def step(self, actions):
         if not self._initialized or self.terminated or self.truncated:
             raise RuntimeError("reset required before step or after episode completion")
@@ -284,8 +290,7 @@ class TakeoverPatrolEnv:
             executed = requested.copy()
             if self.phase == "takeover":
                 i = self.takeover_agent
-                executed[i] = _limit_rows((self._operator_target - self.positions[i])[None, :],
-                                          c.operator_speed)[0]
+                executed[i] = self.operator_command()
                 self.last_override_mask[i] = True
             self.last_requested_velocity = requested.copy()
             self.last_executed_velocity = executed.copy()
