@@ -5,7 +5,7 @@
   "control_dt_seconds": 0.1,
   "stress_only_delay_steps": [8],
   "scenario_seeds": [71000, 71001, 71002, 71003, 71004, 71005, 71006, 71007],
-  "policies": ["nominal", "reactive_raw", "reactive_cv", "reactive_oracle", "predictive_cv", "predictive_oracle"],
+  "policies": ["nominal", "reactive_raw", "reactive_cv", "reactive_oracle", "predictive_raw", "predictive_cv", "predictive_oracle"],
   "workers": 4,
   "max_wall_seconds": 1200,
   "status": "engineering_diagnostic_not_final_test",

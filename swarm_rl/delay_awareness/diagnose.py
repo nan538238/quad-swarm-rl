@@ -114,9 +114,14 @@ def gates(cases, spec):
         zero = index[('crossing', 'reactive_raw', 0)]
         oracle = index[('crossing', 'reactive_oracle', delay)]
         cv = index[('crossing', 'predictive_cv', delay)]
+        prediction_raw = index[('crossing', 'predictive_raw', delay)]
+        prediction_zero = index[('crossing', 'predictive_raw', 0)]
         predictive_oracle = index[('crossing', 'predictive_oracle', delay)]
-        deployable = [index[('crossing', p, delay)] for p in ('reactive_raw', 'reactive_cv', 'predictive_cv')]
-        loss = raw['collisions'] - zero['collisions'] >= 2 or zero['successes'] - raw['successes'] >= 2
+        deployable = [index[('crossing', p, delay)] for p in ('reactive_raw', 'reactive_cv', 'predictive_raw', 'predictive_cv')]
+        reactive_loss = raw['collisions'] - zero['collisions'] >= 2 or zero['successes'] - raw['successes'] >= 2
+        predictive_loss = (prediction_raw['collisions'] - prediction_zero['collisions'] >= 2 or
+                           prediction_zero['successes'] - prediction_raw['successes'] >= 2)
+        loss = reactive_loss or predictive_loss
         benefit = oracle['collisions'] <= raw['collisions'] - 2 or oracle['successes'] >= raw['successes'] + 2
         prediction_gap = (predictive_oracle['collisions'] <= cv['collisions'] - 2 or
                           predictive_oracle['successes'] >= cv['successes'] + 2)
@@ -124,6 +129,7 @@ def gates(cases, spec):
         beyond_simple = all(predictive_oracle['collisions'] <= r['collisions'] and
             predictive_oracle['successes'] >= r['successes'] + 2 for r in deployable)
         results.append({'delay_steps': delay, 'delay_difficulty': bool(loss),
+            'reactive_delay_difficulty': bool(reactive_loss), 'predictive_delay_difficulty': bool(predictive_loss),
             'same_reactive_controller_information_benefit': bool(benefit),
             'same_predictive_controller_information_benefit': bool(prediction_gap),
             'oracle_predictive_exceeds_all_simple_baselines': bool(beyond_simple)})

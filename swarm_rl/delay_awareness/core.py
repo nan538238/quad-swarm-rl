@@ -212,6 +212,7 @@ POLICIES = {
     'reactive_raw': ('raw', reactive),
     'reactive_cv': ('cv', reactive),
     'reactive_oracle': ('oracle', reactive),
+    'predictive_raw': ('raw', predictive),
     'predictive_cv': ('cv', predictive),
     'predictive_oracle': ('oracle', predictive),
 }
