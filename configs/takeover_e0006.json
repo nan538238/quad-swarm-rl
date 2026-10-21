@@ -1,0 +1,84 @@
+{
+  "experiment_id": "E0006",
+  "protocol_id": "CP-C2-02",
+  "config_id": "takeover-policy-cp-c2-02-v1",
+  "angles_degrees": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "training_seed_range": [
+    300,
+    999
+  ],
+  "training_schedule": "seed=300+(episode_index//8)%700; angle=45*(episode_index%8)",
+  "detour_distance_range": [
+    1.0,
+    2.6
+  ],
+  "episode_seconds": 24.0,
+  "learning_rate": 0.0003,
+  "gamma": 0.995,
+  "gae_lambda": 0.95,
+  "clip": 0.2,
+  "epochs": 4,
+  "minibatch_timesteps": 256,
+  "rollout_timesteps": 2048,
+  "entropy_coefficient": 0.001,
+  "value_coefficient": 0.5,
+  "max_grad_norm": 0.5,
+  "training_steps": 131072,
+  "device": "cpu",
+  "torch_threads": 1,
+  "dense_predictor_path": "takeover_runs/e0003-predictor-001/model.pt",
+  "auxiliary_duration_scale_seconds": 4.5,
+  "reactive_gain": 1.5,
+  "reactive_range_m": 0.9,
+  "training_seeds": [
+    0,
+    1,
+    2
+  ],
+  "checkpoint_steps": [
+    32768,
+    65536,
+    98304,
+    131072
+  ],
+  "development_scenario_seeds": [
+    10040,
+    10041,
+    10042,
+    10043,
+    10044
+  ],
+  "final_test_scenario_seeds": [
+    20000,
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20006,
+    20007,
+    20008,
+    20009,
+    20010,
+    20011,
+    20012,
+    20013,
+    20014,
+    20015,
+    20016,
+    20017,
+    20018,
+    20019
+  ],
+  "max_wall_seconds": 1790,
+  "rules_max_wall_seconds": 2690
+}

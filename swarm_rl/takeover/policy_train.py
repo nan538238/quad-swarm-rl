@@ -156,7 +156,7 @@ def check_deadline(deadline):
         raise TimeoutError('Prespecified wall cap reached; partial artifacts retained')
 
 
-def train(specification, variant, output, predictor, deadline):
+def train(specification, variant, output, predictor, deadline, checkpoint_callback=None):
     torch.manual_seed(specification['torch_seed'])
     model = TeamPolicy()
     optimizer = torch.optim.Adam(model.parameters(), lr=specification['learning_rate'])
@@ -172,8 +172,10 @@ def train(specification, variant, output, predictor, deadline):
               'active_actor_rows': 0, 'active_takeover_timesteps': 0,
               'completed_episodes': 0, 'updates': 0}
     write_json(output / 'initialization.json', {'state_sha256': initial_digest,
-               'initializer': 'torch.nn.Linear defaults; seed0; logstd=-1',
-               'rng_seeds': {'initial_weights': 0, 'action': 0, 'shuffle': 0, 'entropy': 1000},
+               'initializer': f"torch.nn.Linear defaults; seed{specification['torch_seed']}; logstd=-1",
+               'rng_seeds': {'initial_weights': specification['torch_seed'],
+                             'action': specification['torch_seed'], 'shuffle': specification['torch_seed'],
+                             'entropy': 1000 + specification['torch_seed']},
                'schedule': specification['training_schedule'],
                'advantage_normalization': 'over active actor rows per rollout, population std',
                'entropy': 'reparameterized MC differential entropy of current tanh Gaussian'})
@@ -265,6 +267,8 @@ def train(specification, variant, output, predictor, deadline):
                 check_deadline(deadline)
                 report = update_policy(model, optimizer, rollout, specification, shuffle_rng, entropy_rng)
                 counts['updates'] += 1
+                if checkpoint_callback is not None:
+                    checkpoint_callback(model, counts)
                 json_line(updates, {'update': counts['updates'], **counts,
                                    'wall_seconds': time.monotonic() - started, **report})
                 updates.flush()
@@ -313,7 +317,7 @@ def train(specification, variant, output, predictor, deadline):
                       'incomplete_episode_present': not (env.terminated or env.truncated)}
 
 
-def evaluate(specification, variant, model, output, deadline):
+def evaluate(specification, variant, model, output, deadline, *, split='validation', scenario_seeds=None):
     cases = []
     policies = RULES if variant == 'rules' else (variant,)
     counts = {'live_control_steps': 0, 'live_physics_steps': 0,
@@ -321,14 +325,14 @@ def evaluate(specification, variant, model, output, deadline):
     started = time.monotonic()
     with gzip.open(output / 'validation_trajectories.jsonl.gz', 'wt', compresslevel=1) as trajectories:
         for policy in policies:
-            for seed in specification['validation_scenario_seeds']:
+            for seed in (specification['validation_scenario_seeds'] if scenario_seeds is None else scenario_seeds):
                 for angle in specification['angles_degrees']:
                     check_deadline(deadline)
                     env = make_env(specification, angle)
                     observations, _ = env.reset(seed=seed)
                     episode_id = f'{policy}-seed-{seed}-angle-{angle}'
                     case = {'episode_id': episode_id, 'policy': policy, 'scenario_seed': seed,
-                            'angle_degrees': angle, 'split': 'validation', 'status': 'running',
+                            'angle_degrees': angle, 'split': split, 'status': 'running',
                             'config': asdict(env.config), 'deterministic': True}
                     cases.append(case)
                     integrated_lag, previous_lag, total_reward = 0.0, lag(env), 0.0

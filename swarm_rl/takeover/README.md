@@ -115,3 +115,20 @@ preliminary, with one training seed and no final-test scenarios. Recovery cost
 is 10 seconds for any collision or absent recovery; inspection failure is
 reported separately. Compare integrated patrol lag only on paired common-success
 cases, because crashes shorten the observed duration.
+
+### CP-C2-02 bounded multiseed orchestration
+
+`python -m swarm_rl.takeover.policy_full --config configs/takeover_e0006.json --variant none --seed 0 --include-rules --output takeover_runs/UNIQUE_NAME`
+executes the separately approved E0006 none/analytic/dense or E0007 sparse Card.
+All task, reward, PPO, masks and scenario scheduling remain in the CP1 shared implementation.
+Each run uses 131072 transitions (64 updates), seeds 0/1/2, immutable snapshots at
+32768/65536/98304/131072, and development evaluations only after training.
+Development cases use seeds 10040..10044; final cases use 20000..20019 with all eight
+angles. Final test always uses step131072. Only none seed0 runs the four fixed rules.
+Outputs include effective_config.json, initialization.json, four checkpoints,
+development/step-N/validation_cases.json, final_test/validation_cases.json,
+optional final_rules/validation_cases.json, complete trajectories, compute counts,
+source copies, metadata and SHA256 inventory. Development cases are explicitly
+labeled development; final policy and rule cases are labeled final_test.
+No checkpoint selection, continuation, tuning, or restart on observation timeout.
+Scientific execution refuses dirty source. Three seeds remain preliminary non-paper evidence.
