@@ -1,0 +1,866 @@
+{
+  "source_commit": "8c9f30110057a173788261eb07c2ae160c38209d",
+  "checks": {
+    "rules": {
+      "cases": 560,
+      "verified_hashes": 1132
+    },
+    "mlp": {
+      "cases": 80,
+      "verified_hashes": 177
+    },
+    "gru": {
+      "cases": 80,
+      "verified_hashes": 177
+    }
+  },
+  "paired_initial_conditions": true,
+  "zero_delay_equivalence": true,
+  "oracle_and_nominal_delay_invariance": true,
+  "rows": [
+    {
+      "policy": "gru",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 0,
+      "collisions": 1,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "gru",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "mlp",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 1,
+      "collisions": 1,
+      "mean_cost_s": 18.9
+    },
+    {
+      "policy": "mlp",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 1,
+      "collisions": 1,
+      "mean_cost_s": 18.89
+    },
+    {
+      "policy": "mlp",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 1,
+      "collisions": 1,
+      "mean_cost_s": 18.88
+    },
+    {
+      "policy": "mlp",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 2,
+      "collisions": 1,
+      "mean_cost_s": 17.6125
+    },
+    {
+      "policy": "mlp",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 3,
+      "collisions": 1,
+      "mean_cost_s": 16.4175
+    },
+    {
+      "policy": "mlp",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "mlp",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "mlp",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "mlp",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "mlp",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 0,
+      "collisions": 0,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "nominal",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "nominal",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "nominal",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "nominal",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "nominal",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "nominal",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "nominal",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "nominal",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "nominal",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "nominal",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.2775
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.21
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.245000000000001
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 7,
+      "collisions": 1,
+      "mean_cost_s": 10.7225
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 7,
+      "collisions": 1,
+      "mean_cost_s": 10.8825
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_cv",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.2775
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.2775
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.2775
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.2775
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.2775
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_oracle",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.2775
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.342500000000001
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.5075
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 7,
+      "collisions": 1,
+      "mean_cost_s": 10.575
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 1,
+      "collisions": 7,
+      "mean_cost_s": 18.8125
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "predictive_raw",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 1,
+      "collisions": 7,
+      "mean_cost_s": 18.825
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_cv",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_oracle",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "crossing",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "crossing",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "crossing",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "crossing",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "crossing",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 0,
+      "collisions": 8,
+      "mean_cost_s": 20.0
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "outward",
+      "delay_ms": 0,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "outward",
+      "delay_ms": 100,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "outward",
+      "delay_ms": 200,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "outward",
+      "delay_ms": 400,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    },
+    {
+      "policy": "reactive_raw",
+      "geometry": "outward",
+      "delay_ms": 800,
+      "n": 8,
+      "successes": 8,
+      "collisions": 0,
+      "mean_cost_s": 9.040000000000001
+    }
+  ],
+  "gates": {
+    "threshold": "At least two cases out of eight; exploratory gate, not statistical significance.",
+    "per_delay": [
+      {
+        "delay_steps": 1,
+        "delay_difficulty": false,
+        "reactive_delay_difficulty": false,
+        "predictive_delay_difficulty": false,
+        "same_reactive_controller_information_benefit": false,
+        "same_predictive_controller_information_benefit": false,
+        "oracle_predictive_exceeds_all_simple_baselines": false
+      },
+      {
+        "delay_steps": 2,
+        "delay_difficulty": false,
+        "reactive_delay_difficulty": false,
+        "predictive_delay_difficulty": false,
+        "same_reactive_controller_information_benefit": false,
+        "same_predictive_controller_information_benefit": false,
+        "oracle_predictive_exceeds_all_simple_baselines": false
+      },
+      {
+        "delay_steps": 4,
+        "delay_difficulty": false,
+        "reactive_delay_difficulty": false,
+        "predictive_delay_difficulty": false,
+        "same_reactive_controller_information_benefit": false,
+        "same_predictive_controller_information_benefit": false,
+        "oracle_predictive_exceeds_all_simple_baselines": false
+      }
+    ],
+    "oracle_warning": "Same-controller fresh-state reference, not an optimal control upper bound.",
+    "learning_prediction_candidate": false
+  }
+}
